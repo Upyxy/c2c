@@ -284,9 +284,17 @@
                 </div>
                 <!-- 按钮 -->
                 <div>
-                <div class="debutton">
-                <input type="button" value="我要购买"> 
-                </div>
+                <form action="../../order/enter" method="post">
+                <input type="hidden" name="goodsId" value="${goodsExtend.goods.id}"/>
+                <input type="hidden" name="sellerId" value="${seller.id}">
+                <input type="hidden" name="goodsName" value="${goodsExtend.goods.name}"/>
+                <input type="hidden" name="goodsPrice" value="${goodsExtend.goods.price}"/>
+                <input type="hidden" name="image" value="${goodsExtend.images[0].imgUrl}"/>
+                <input type="hidden" name="goodsDescrible" value="${goodsExtend.goods.describle}"/>                   
+<!--                 <div class="debutton"> -->
+                <input  type="submit"  value="我要购买"  style="width: 130px;border: 0px;font-size: 18px;  height: 40px;float: left;border:none;background-color: #EF5350;" /> 
+<!--                 </div> -->
+                </form>
                 <div class="debutton1">
                 <input type="button" value="收藏" onclick="shoucang(${goodsExtend.goods.id})"> 
                 </div>

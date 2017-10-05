@@ -1,0 +1,156 @@
+
+
+/*--checkout--*/
+.check-out{
+	padding:4em 0em;
+}
+.h4{
+	margin-left: 140px;
+}
+
+tr{
+	height: 80px;
+}
+
+.check-out table{
+	width:1130px;
+	margin: 0px auto;
+	
+}
+.check-out th{
+	color: #52D0C4;
+  	font-size: 16px;
+ 	font-family: 'OleoScript-Regular';
+}
+.check-out th, 
+ {
+    padding: 10px;
+}
+.check-out td{
+	color:#b2b2b2;
+  font-size: 14px;
+}
+.check-out a.at-in {
+   float: left;
+    width: 20%;
+}
+.sed {
+    float: right;
+	width: 74%;
+	height: 60px;
+}
+.sed h5,p{
+	float: left;
+}
+.sed h5{
+     color: #52D0C4;
+  	font-size: 14px;
+  	 margin-top: 0px;
+  	margin-bottom: 0px;
+  	font-weight: normal;
+  	line-height: 1;
+}
+.sed p{
+    color:#b2b2b2;
+	font-size:13px;
+	line-height:1.8em;
+}
+.check input[type="text"]{
+    width: 76%;
+  padding: 0.3em;
+  margin: 1em 0;
+  background: #fff;
+  outline: none;
+  text-align: center;
+   border: 1px solid #000;
+}
+.check{
+	width:6%;
+}
+.ring-in{
+	width:45%;
+}
+.check-out h1 {
+    font-size: 3em;
+  color: #000;
+  font-family: 'OleoScript-Regular';
+  margin: 0 0px 1em;
+  text-align: center;
+}
+a.to-buy{
+	padding: 0.3em 0.7em;
+  color: #FFF;
+  background: #52D0C4;
+  margin: 0.5em 0 0;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 1.6em;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 140px;
+}
+a.to-buy:hover{
+  background: #000;
+}
+/*--//checkout--*/
+/*--typo--*/
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: none;
+}
+
+
+/*--checkout--*/
+th, td {
+  padding: 10px 4px;
+  text-align: center;
+}
+
+}
+@media(max-width:480px){
+.matter-banner{
+  width: 100%;
+  padding: 0;
+}
+
+/*--checkout--*/
+.check-out h1 {
+  font-size: 2em;
+  margin: 0 0 0.4em;
+}
+.check-out {
+  padding: 2em 0em;
+}
+.sed {
+  float: right;
+  width: 0;
+  display: none;
+}
+a.at-in {
+  float: left;
+  width: 76%;
+}
+.ring-in {
+  width: 20%;
+}
+th, td {
+  padding: 7px 0px;
+}
+.check-out th {
+  font-size: 1em;
+}
+.check-out td {
+  font-size: 0.8em;
+}
+a.to-buy {
+  margin: 0;
+  font-size: 0.8em;
+}
+.single {
+  padding: 2em 0;
+}
+/*--typo--*/
+

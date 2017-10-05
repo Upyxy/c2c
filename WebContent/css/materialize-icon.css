@@ -21,11 +21,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.debutton,.debutton1{
+.debutton1{
 	height: 40px;
 	float: left;
 }
-.debutton input[type=button],.debutton1 input[type=button]{
+.debutton1 input[type=button]{
 	width: 130px;
 	border: 0px;
 	font-size: 18px;
@@ -35,7 +35,4 @@
 .debutton1 input[type=button]{
 	margin-left: 20px;
 	background-color: #9ecdf8;
-}
-.debutton input[type=button]{
-	background-color: #EF5350;
 }
