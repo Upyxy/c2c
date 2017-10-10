@@ -1,0 +1,31 @@
+/* ÐÞ¸ÄµØÖ· */
+
+.modal {
+	z-index: 2050!important;
+}
+
+
+.m-t-none {
+	margin-top: 0
+}
+
+.m-b {
+	margin-bottom: 15px;
+	padding: 10px 0px 10px 10px;
+	background-color: gainsboro;
+	font-size: 17px;
+	font: "Î¢ÈíÑÅºÚ";
+}
+
+.btn-primary{
+	color: rgba(97, 97, 236, 0.69);
+	background-color: #F9F9F9;
+	border:0px solid;
+	color: black;
+}
+.btn-primary:hover{
+	color: #9ECDF8;
+}
+.input[type=checkbox], input[type=radio]{
+	margin: 4px 5px 0px 0px;
+}

@@ -58,5 +58,11 @@ public interface GoodsService {
      * @return
      */
     public List<Goods> getGoodsByUserId(Integer user_id);
+    
+    /*
+     * 查询出后台管理界面的所有关于商品的信息
+     */
+	public List<Goods> getGoodsLists(String keyword, int currentPage,
+			int pageSize);
 
 }

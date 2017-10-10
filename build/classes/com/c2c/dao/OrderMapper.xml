@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.c2c.dao.OrderMapper" >
+<!-- <resultMap id="BaseResultMap" type="com.c2c.pojo.Order" >
+	<id column="id" property="id" jdbcType="INTEGER" />
+    <result column="seller_id" property="sellerId" jdbcType="INTEGER" />
+    <result column="buyer_id" property="buyerId" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="FLOAT" />
+     <result column="create_at" property="createAt" jdbcType="VARCHAR" />
+  </resultMap> -->
+
+ <insert id="inser" parameterType="com.c2c.pojo.Order">
+    insert into `order` ( seller_id, buyer_id, goods_id,
+      creat_at, price)
+    values ( #{sellerId,jdbcType=INTEGER}, #{ buyerId,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, 
+      #{createAt,jdbcType=VARCHAR}, #{price,jdbcType=FLOAT})
+  </insert>
+
+</mapper>

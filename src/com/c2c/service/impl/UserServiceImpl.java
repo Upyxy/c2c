@@ -64,18 +64,20 @@ public class UserServiceImpl implements UserService {
     }
 
     public InputStream getInputStream() throws Exception {
-        String[] title=new String[]{"序号","手机号","姓名","QQ","开通时间","商品数量","用户权限"};
+        String[] title=new String[]{"ID","账号","昵称","QQ","创建时间","发布商品数量","账号类型","最后上线时间","状态"};
         List<User> list=userMapper.getUserList();
         List<Object[]>  dataList = new ArrayList<Object[]>();
         for(int i=0;i<list.size();i++){
-            Object[] obj=new Object[7];
+            Object[] obj=new Object[9];
             obj[0]=list.get(i).getId();
             obj[1]=list.get(i).getPhone();
             obj[2]=list.get(i).getUsername();
             obj[3]=list.get(i).getQq();
             obj[4]=list.get(i).getCreateAt();
             obj[5]=list.get(i).getGoodsNum();
-            obj[6]=list.get(i).getPower();
+            obj[6]=list.get(i).getPower()==10? "普通用户":"管理员";
+            obj[7]=list.get(i).getLastLogin();
+            obj[8]=list.get(i).getStatus()==1?"禁用":"启用";
             dataList.add(obj);
         }
         WriteExcel ex = new WriteExcel(title, dataList);
@@ -96,7 +98,26 @@ public class UserServiceImpl implements UserService {
         ServletRequestAttributes attrs =(ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         return attrs.getRequest();
     }
-    
-    
 
+	/**
+	 * 管理端用户列表
+	 */
+	public List<User> getUserLists(String keyword,int currentPage, int pageSize) {
+		 List<User> users = userMapper.getUserLists(keyword,currentPage,pageSize);
+		return users;
+	}
+	/**
+	 * 查询这个条件下一共有多少条数据
+	 */
+	public int getKeywordCount(String keyword) {
+		int KeywordCount =userMapper.getKeywordCount(keyword);
+		return KeywordCount;
+	}
+	/**
+	 * 更新用户信息
+	 */
+	public int updateByPrimaryKeySelective(User record){
+		int i = userMapper.updateByPrimaryKeySelective(record);
+		return i;
+	}
 }

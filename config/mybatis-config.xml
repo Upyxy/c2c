@@ -7,6 +7,7 @@
     <typeAliases>
         <typeAlias alias="User" type="com.c2c.pojo.User"/>
     </typeAliases>
+<!--     PageHelper插件分页 	 -->
     <plugins>
         <!-- com.github.pagehelper为PageHelper类所在包名 -->
         <plugin interceptor="com.github.pagehelper.PageHelper">
@@ -36,4 +37,5 @@
             <property name="returnPageInfo" value="check"/>
         </plugin>
     </plugins>
+    
 </configuration>

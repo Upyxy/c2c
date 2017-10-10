@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>个人中心</title>
+    <title>收藏列表</title>
     <link rel="stylesheet" href="<%=basePath%>css/font-awesome.min.css" />
     <link rel="stylesheet" href="<%=basePath%>css/emoji.css" />
     <link rel="stylesheet" href="<%=basePath%>css/userhome.css" />
@@ -50,38 +50,51 @@
                 <ul>
                     <a href="">
                         <li class="notice">
-                            <div></div>
+                            
                             <span>我的消息</span>
                             <strong></strong>
                         </li>
                     </a>
                    <a href="<%=basePath%>collection/scList">
                         <li class="fri">
-                            <div></div>
+                            
                             <span>收藏列表</span>
                             <strong></strong>
                         </li>
                     </a>
                     <a href="<%=basePath%>user/basic">
                         <li class="set">
-                            <div></div>
+                            
                             <span>个人设置</span>
                             <strong></strong>
                         </li>
                     </a>
                     <a href="<%=basePath%>goods/publishGoods">
                         <li class="store">
-                            <div></div>
+                            
                             <span>发布物品</span>
                             <strong></strong>
                         </li>
                     </a>
                     <a href="<%=basePath%>user/allGoods">
                         <li class="second">
-                            <div></div>
+                            
                             <span>我的闲置</span>
                             <strong></strong>
                         </li>
+                    </a>
+                    <a href="<%=basePath%>user/myorder">
+                    <li class="myorder">
+                            <span>我的订单</span>
+                            <strong></strong>
+                    </li>
+                    </a>
+                    <a href="<%=basePath%>user/address">
+                    <li class="myadr">
+                            <span>我的地址</span>
+                            <strong></strong>
+                            
+                    </li>
                     </a>
                 </ul>
             </div>
@@ -115,24 +128,11 @@
                                         <div class="left_shadow"></div>
                                         <div class="left" index="1" style="display: none;"></div>
                                         <div class="right_shadow"></div>
-                                        <div class="left" index="3" style="display: none;">></div>
+                                        <div class="left" index="3" style="display: none;"></div>
                                         <img src="../upload/${items.img_url}" index="2">
                                         <span class="com" style="display: none;left: 396.733px;"></span>
                                     </div>
                                     
-<!--                                     <div class="interact"> -->
-<%--                                         <span class="fa fa-heart"><a href="<%=basePath%>goods/editGoods/${items.goods.id}">编辑</a></span> --%>
-<!--                                         <span class="fa fa-share"><a href="">擦亮</a></span> -->
-<%--                                         <span class="fa fa-commenting"><a>${items.goods.commetNum}0</a></span> --%>
-<%--                                         <span class="time">${items.goods.startTime}</span> --%>
-<%--                                         <span class="fa fa-trash"><a href="<%=basePath%>goods/deleteGoods/${items.goods.id}">删除</a></span> --%>
-<!--                                     </div> -->
-                                    
-<!--                                     <div class="like_detail"> -->
-<!--                                         <div class="like_content"> -->
-<%--                                             <span>下架时间：${items.goods.endTime}</span> --%>
-<!--                                         </div> -->
-<!--                                     </div> -->
                                 </div>
                             </div>
                         </c:forEach>

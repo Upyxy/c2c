@@ -13,6 +13,7 @@ import com.c2c.service.CatelogService;
 import com.c2c.service.CollectionService;
 import com.c2c.service.CommentsService;
 import com.c2c.service.ImageService;
+import com.c2c.service.ReplyService;
 import com.c2c.service.UserService;
 import com.c2c.util.DateUtil;
 import com.sun.tracing.dtrace.Attributes;
@@ -45,6 +46,8 @@ public class GoodsController {
     private CommentsService commentsService;
     @Autowired
     private CollectionService collectionService;
+    @Autowired
+    private ReplyService replyService;
 
     /**
      * 首页显示商品，每一类商品查询6件，根据最新上架排序 key的命名为catelogGoods1、catelogGoods2....
@@ -58,8 +61,9 @@ public class GoodsController {
         //商品种类数量
         int catelogSize = 7;
         //每个种类显示商品数量
+        	
         int goodsSize = 6;
-        for (int i = 1; i <= catelogSize; i++) {
+        for (int i = 1; i <= catelogSize; i++) {		//每种商品进行循环
             List<Goods> goodsList = null;
             List<GoodsExtend> goodsAndImage = null;
             goodsList = goodsService.getGoodsByCatelogOrderByDate(i, goodsSize);
@@ -160,6 +164,19 @@ public class GoodsController {
         	CommentsExtend commentsExtend =new CommentsExtend();
             Comments comments=commentsList.get(i);
             name[i]=userService.getUserNameById(comments.getUserId());
+//            List<Reply> replyList =replyService.getReplyByCommentsId(comments.getId());
+//            String[] name1 = new String[commentsList.size()];
+//            List<ReplyExtend> replyExtends =new ArrayList<ReplyExtend>();
+//            for(int j = 0 ; j<replyList.size(); j++){
+//            	ReplyExtend replyExtend =new ReplyExtend();
+//            	Reply reply=replyList.get(j);
+//            	name1[j]=userService.getUserNameById(reply.getUserId());
+//            	replyExtend.setName1(name1[j]);
+//            	replyExtend.setReply(reply);
+//            	replyExtends.add(j,replyExtend);
+//            	
+//            }
+//            commentsExtend.setReplyExtends(replyExtends);
             commentsExtend.setName(name[i]);
             commentsExtend.setComments(comments);
             commentsAndUserName.add(i, commentsExtend);

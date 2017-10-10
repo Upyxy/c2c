@@ -4328,7 +4328,8 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 
 .nav>li>a:focus, .nav>li>a:hover {
 	text-decoration: none;
-	background-color: #eee
+	background-color: #03A9F4
+	
 }
 
 .nav>li.disabled>a {
@@ -5186,8 +5187,8 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 	z-index: 3;
 	color: #fff;
 	cursor: default;
-	background-color: #337ab7;
-	border-color: #337ab7
+	background-color: #067ce2;
+	border-color: #0c7bda
 }
 
 .pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover,

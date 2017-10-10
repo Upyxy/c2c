@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.c2c.dao.GoodsMapper;
 import com.c2c.pojo.Goods;
+import com.c2c.pojo.User;
 import com.c2c.service.GoodsService;
 import com.c2c.util.DateUtil;
 /**
@@ -71,5 +72,13 @@ public class GoodsServiceImpl implements GoodsService {
         List<Goods> goodsList = goodsMapper.getGoodsByUserId(user_id);
         return goodsList;
     }
+    /**
+	 * 管理端商品列表
+	 */
+    public List<Goods> getGoodsLists(String keyword, int currentPage,
+			int pageSize) {
+		 List<Goods> goodsList = goodsMapper.AllGoddsList(keyword,currentPage,pageSize);
+		return goodsList;
+	}
 
 }

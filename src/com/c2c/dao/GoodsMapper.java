@@ -90,4 +90,12 @@ public interface GoodsMapper {
      * @return
      */
     public List<Goods> getGoodsByUserId(Integer user_id);
+
+	
+    
+    /*
+     * 后台查询所有商品信息
+     * 
+     */
+    List<Goods> AllGoddsList(String keyword, int currentPage, int pageSize);
 }

@@ -3,10 +3,13 @@ package com.c2c.controller;
 import com.c2c.pojo.User;
 import com.c2c.util.UserGrid;
 import com.c2c.service.UserService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,7 +35,8 @@ public class MainController {
         if("".equals(pageSizeStr))
             pageSize = 10;
 //        List<User> data = userService.getPageUser(1,10,username);
-        List<User> data = userService.getPageUser(1,10);
+//        List<User> data = userService.getPageUser(1,10);
+        List<User> data = new ArrayList<User>();
         System.out.println("data:"+data.size());
         UserGrid userGrid = new UserGrid();
 //        userGrid.setData(data);

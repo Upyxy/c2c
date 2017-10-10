@@ -1,5 +1,7 @@
 package com.c2c.pojo;
 
+import java.util.List;
+
 public class Goods {
     private Integer id;
 
@@ -22,6 +24,10 @@ public class Goods {
     private Integer commetNum;
 
     private String describle;
+    
+    private List<Catelog> catelog;
+    
+    private List<Image> image;
 
     public Integer getId() {
         return id;
@@ -110,4 +116,30 @@ public class Goods {
     public void setPolishTime(String polishTime) {
         this.polishTime = polishTime;
     }
+
+	@Override
+	public String toString() {
+		return "Goods [id=" + id + ", catelogId=" + catelogId + ", userId="
+				+ userId + ", name=" + name + ", price=" + price
+				+ ", realPrice=" + realPrice + ", startTime=" + startTime
+				+ ", endTime=" + endTime + ", polishTime=" + polishTime
+				+ ", commetNum=" + commetNum + ", describle=" + describle + "]";
+	}
+
+	public List<Catelog> getCatelog() {
+		return catelog;
+	}
+
+	public void setCatelog(List<Catelog> catelog) {
+		this.catelog = catelog;
+	}
+
+	public List<Image> getImage() {
+		return image;
+	}
+
+	public void setImage(List<Image> image) {
+		this.image = image;
+	}
+    
 }

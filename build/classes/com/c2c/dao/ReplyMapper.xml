@@ -25,6 +25,9 @@
     from reply
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="getReplyByCommentsId" resultMap="ResultMapWithBLOBs">
+    select * from reply where commet_id = #{commentsId,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from reply
     where id = #{id,jdbcType=INTEGER}

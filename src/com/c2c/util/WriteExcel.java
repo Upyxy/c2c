@@ -120,7 +120,7 @@ public class WriteExcel {
         //设置字体大小
         font.setFontHeightInPoints((short)11);
         //字体加粗
-        font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
+//        font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
         //设置字体名字
         font.setFontName("Courier New");
         //设置样式;
@@ -195,18 +195,6 @@ public class WriteExcel {
 
         return style;
 
-    }
-    public static void main(String[] args) throws Exception {
-        String[] rowsName = new String[]{"序号","状态","录入人","录入时间"};
-        List<Object[]> dataList = new ArrayList<Object[]>();
-        Object[] obj1=new Object[4];
-        obj1[0]="1";obj1[1]="ok";obj1[2]="hello";obj1[3]="wsz";
-        dataList.add(obj1);
-        Object[] obj2=new Object[4];
-        obj2[0]="2";obj2[1]="dsa";obj2[2]="wolrd";obj2[3]="python";
-        dataList.add(obj2);
-        WriteExcel ex = new WriteExcel(rowsName, dataList);
-        ex.export();
     }
 
 }

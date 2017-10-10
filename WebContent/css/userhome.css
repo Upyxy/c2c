@@ -52,18 +52,6 @@ ul {
 	z-index: 9900
 }
 
-/* #home_header .logo {
-	display: block;
-	width: 150px;
-	height: 65px;
-	line-height: 65px;
-	font-size: 30px;
-	float: left;
-	margin: -1px 0 0 26px;
-	letter-spacing: 10px;
-	background-size: cover;
-	margin-top: 2px
-} */
 .em2{
 	margin-left: 130px;
 	font-size: 45px;
@@ -253,12 +241,12 @@ ul {
 }
 
 #user_nav .home_nav {
-	width: 200px
+	width: 200px;
 }
 
 #user_nav .home_nav ul {
 	width: 200px;
-	height: 250px;
+	height: 350px;
 	overflow: hidden;
 	margin-bottom: 10px
 }
@@ -266,8 +254,7 @@ ul {
 #user_nav .home_nav ul li {
 	width: 150px;
 	height: 40px;
-	margin: 5px 25px;
-	color: #b4b4b4;
+	margin: 0px 25px;
 	float: left;
 	border-radius: 25px;
 	cursor: pointer
@@ -303,7 +290,9 @@ ul {
 #user_nav .home_nav ul li span {
 	float: left;
 	font-size: 15px;
-	line-height: 40px
+	line-height: 30px;
+	margin-left: 30px;
+	color: black;
 }
 
 #user_nav .home_nav ul li strong {
@@ -326,7 +315,7 @@ ul {
 #user_content {
 	margin: 66px 0 0 200px;
 	float: left;
-	width: 948px
+	width: 948px;
 }
 
 #my_share {
@@ -3090,3 +3079,7 @@ ul {
 		"Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
 		STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif
 }
+
+
+
+
