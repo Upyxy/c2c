@@ -13,7 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by lenovo on 2017/5/9.
+ * main
+ * <p>Title:MainController</p>
+ * <p>Description: </p>
+ * <p>Company:com.c2c</p>
+ * @author Muling
+ * @date 2017年10月11日 下午4:06:08
+ * @version 1.0
  */
 @Controller
 public class MainController {

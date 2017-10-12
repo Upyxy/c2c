@@ -8,6 +8,23 @@
     <result column="commet_id" property="commetId" jdbcType="INTEGER" />
     <result column="create_at" property="createAt" jdbcType="VARCHAR" />
   </resultMap>
+  
+  
+  <!-- 返回带名字的ReplyList 多表查询 -->
+  <resultMap id="replyListResultMap" type="com.c2c.pojo.Reply" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="atuser_id" property="atuserId" jdbcType="INTEGER" />
+    <result column="commet_id" property="commetId" jdbcType="INTEGER" />
+    <result column="create_at" property="createAt" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+    <collection property="user" javaType="java.util.List" ofType="com.c2c.pojo.User">  
+            <id column="id" property="id" jdbcType="INTEGER" />  
+            <result column="username" property="username" jdbcType="VARCHAR" />   
+        </collection>
+  </resultMap>
+  
+  
   <resultMap id="ResultMapWithBLOBs" type="com.c2c.pojo.Reply" extends="BaseResultMap" >
     <result column="content" property="content" jdbcType="LONGVARCHAR" />
   </resultMap>
@@ -25,8 +42,9 @@
     from reply
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="getReplyByCommentsId" resultMap="ResultMapWithBLOBs">
-    select * from reply where commet_id = #{commentsId,jdbcType=INTEGER}
+  <select id="getReplyByCommentsId" resultMap="replyListResultMap">
+    SELECT R.*,U.username FROM reply R,`user` U WHERE U.id=R.user_id
+    and commet_id = #{commentsId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from reply

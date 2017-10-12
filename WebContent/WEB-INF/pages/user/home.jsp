@@ -31,8 +31,6 @@
             </a>
         </div>
         <!--
-            作者：hlk_1135@outlook.com
-            时间：2017-05-10
             描述：左侧个人中心栏
         -->
         <div id="user_nav">
@@ -87,7 +85,7 @@
                     </a>
                     <a href="<%=basePath%>user/myorder">
                     <li class="myorder">
-                            <span>我的订单</span>
+                            <span>我已购买</span>
                             <strong></strong>
                     </li>
                     </a>
@@ -102,8 +100,6 @@
             </div>
         </div>
         <!--
-            作者：hlk_1135@outlook.com
-            时间：2017-05-10
             描述：右侧内容区域
         -->
         <div id="user_content">
@@ -131,8 +127,6 @@
                     </div>
                 </div>
                 <!--
-                    作者：hlk_1135@outlook.com
-                    时间：2017-05-11
                     描述：闲置商品展示
                 -->
                 <div class="share_content">
@@ -142,8 +136,6 @@
                 </div>
             </div>
             <!--
-                作者：hlk_1135@outlook.com
-                时间：2017-05-10
                 描述：最右侧，可能认识的人
             -->
             <div class="recommend">

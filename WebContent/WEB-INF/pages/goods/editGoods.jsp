@@ -38,8 +38,6 @@
             </a>
         </div>
         <!--
-            作者：hlk_1135@outlook.com
-            时间：2017-05-10
             描述：左侧个人中心栏
         -->
         <div id="user_nav">
@@ -58,50 +56,61 @@
                 <ul>
                     <a href="">
                         <li class="notice">
-                            <div></div>
+
                             <span>我的消息</span>
                             <strong></strong>
                         </li>
                     </a>
-                    <a href="<%=basePath%>collection/scList">
+                 <a href="<%=basePath%>collection/scList">
                         <li class="fri">
-                            <div></div>
+
                             <span>收藏列表</span>
                             <strong></strong>
                         </li>
                     </a>
                     <a href="<%=basePath%>user/basic">
                         <li class="set">
-                            <div></div>
+
                             <span>个人设置</span>
                             <strong></strong>
                         </li>
                     </a>
                     <a href="<%=basePath%>goods/publishGoods">
                         <li class="store">
-                            <div></div>
+
                             <span>发布物品</span>
                             <strong></strong>
                         </li>
                     </a>
                     <a href="<%=basePath%>user/allGoods">
                         <li class="second">
-                            <div></div>
+
                             <span>我的闲置</span>
                             <strong></strong>
                         </li>
+                    </a>
+                    <a href="<%=basePath%>user/myorder">
+                    <li class="myorder">
+                            <span>我已购买</span>
+                            <strong></strong>
+                    </li>
+                    </a>
+                    <a href="<%=basePath%>user/address">
+                    <li class="myadr">
+                            <span>我的地址</span>
+                            <strong></strong>
+                            
+                    </li>
                     </a>
                 </ul>
             </div>
         </div>
         <!--
-	            作者：hlk_1135@outlook.com
-	            时间：2017-05-10
 	            描述：发布物品
         -->
         <div id="user_content">
             <div class="basic">
-                <form:form action="goods/editGoodsSubmit" method="post" role="form" enctype="multipart/form-data">
+                <form:form action="../../goods/editGoodsSubmit" method="post" role="form" enctype="multipart/form-data">
                     <h1 style="margin-left: 210px;">修改物品信息</h1><hr />
                     <div class="changeinfo">
                         <span>物品名：</span>
@@ -166,8 +175,6 @@
                 </form:form>
             </div>
             <!--
-                作者：hlk_1135@outlook.com
-                时间：2017-05-10
                 描述：最右侧，可能认识的人
             -->
             <div class="recommend">

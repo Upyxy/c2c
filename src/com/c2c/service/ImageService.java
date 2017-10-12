@@ -4,9 +4,7 @@ import java.util.List;
 
 import com.c2c.pojo.Image;
 
-/**
- * Created by lenovo on 2017/5/12.
- */
+
 public interface ImageService {
     int insert(Image record);
     /**
@@ -22,4 +20,9 @@ public interface ImageService {
      * @return
      */
     int deleteImagesByGoodsPrimaryKey(Integer goodsId);
+    
+    /*
+     * 查询imgID
+     */
+    public int getImagesId(Integer goodsId);
 }

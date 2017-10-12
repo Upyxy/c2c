@@ -1,5 +1,7 @@
 package com.c2c.pojo;
 
+import java.util.List;
+
 public class Reply {
     private Integer id;
 
@@ -12,6 +14,8 @@ public class Reply {
     private String createAt;
 
     private String content;
+    
+    private List<User> user;
 
     public Integer getId() {
         return id;
@@ -60,4 +64,12 @@ public class Reply {
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
+
+	public List<User> getUser() {
+		return user;
+	}
+
+	public void setUser(List<User> user) {
+		this.user = user;
+	}
 }

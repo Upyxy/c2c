@@ -98,4 +98,21 @@ public interface GoodsMapper {
      * 
      */
     List<Goods> AllGoddsList(String keyword, int currentPage, int pageSize);
+    
+    int  AllGoddsListCount(String keyword);
+    
+    /*
+     * 后台查询所有商品信息
+     * 
+     */
+    List<Goods> AllGoddsListSh(String keyword, int currentPage, int pageSize);
+    
+    /*
+     * 根据GOODid改GOODS_STATE状态为三
+     */
+    int  updateStatusBygoodsId(int id);
+    
+    int  AllGoddsListCountSh(String keyword);
+    
+    int updateGoodsStatusBygoodsId(String good_status, int id);
 }

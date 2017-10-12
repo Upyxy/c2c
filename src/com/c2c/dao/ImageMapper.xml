@@ -22,6 +22,11 @@
     from image
     where id = #{id,jdbcType=INTEGER}
   </select>
+  
+<!--   通过商品id获取imgid -->
+  <select id="getImagesId"  parameterType="String" resultType="java.lang.Integer">
+  select id from image where goods_id = #{0}
+  </select>
   <select id="selectByGoodsPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer">
     select * from image where goods_id = #{goodsId,jdbcType=INTEGER}
   </select>
@@ -87,4 +92,5 @@
     set goods_id = #{goodsId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
 </mapper>

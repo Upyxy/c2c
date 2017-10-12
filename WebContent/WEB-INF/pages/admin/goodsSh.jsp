@@ -16,7 +16,7 @@
 
 <link rel="stylesheet" href="<%=basePath%>css/bootstrap.min.css">
 <link rel="stylesheet" href="<%=basePath%>css/jquery.bootgrid.min.css">
-
+<link rel="stylesheet" href="<%=basePath%>css/shenhe.css">
 <link
 	href="<%=basePath%>css/plugins/bootstrap-table/bootstrap-table.min.css"
 	rel="stylesheet">
@@ -40,9 +40,9 @@
 			<!-- 				style="text-decoration: none; margin-top: 10px;">导出数据为excel</a> -->
 			<div class="example-wrap">
 				<h4 class="example-title"
-					style="margin-top: 15px; margin-bottom: -28px;">c2c商品信息</h4>
+					style="margin-top: 15px; margin-bottom: -28px;">c2c商品信息审核</h4>
 				<div class="example">
-					<table id="goodsListTable">
+					<table id="goodsShListTable">
 					</table>
 				</div>
 			</div>
@@ -53,10 +53,10 @@
 		$(document)
 				.ready(
 						function() {
-							$("#goodsListTable")
+							$("#goodsShListTable")
 									.bootstrapTable(
 											{
-												url : "../admin/getGoodsLists",
+												url : "../admin/GoodsListsSh",
 												method : "post",
 												contentType : "application/x-www-form-urlencoded",
 												toolbar : '#toolbar', //工具按钮用哪个容器
@@ -87,19 +87,14 @@
 															title : '图片',
 															align : 'center',
 															width : '20%',
-															hight : '20%',
-															formatter : function(
-																	value, row,
-																	index) {
-																var options = [];
-																for (var i = 0; i < value.length; i++) {
-																	var a = value[i];
-																	options
-																			.push(a.imgUrl);
+															hight:  '20%',
+															formatter : function( value, row, index) {
+																var options=[];
+																for(var i=0;i<value.length;i++){
+																	var a=value[i];
+																	options.push(a.imgUrl);
 																}
-																return "<img src='../upload/"
-																		+ options
-																		+ "' width='25%' hight='25%'/>";
+																return "<img src='../upload/"+options+"' width='25%' hight='25%'/>";
 															}
 														},
 														{
@@ -110,14 +105,11 @@
 															field : 'catelog',
 															title : '类别名',
 															align : 'center',
-															formatter : function(
-																	value, row,
-																	index) {
-																var options = [];
-																for (var i = 0; i < value.length; i++) {
-																	var a = value[i];
-																	options
-																			.push(a.name);
+															formatter : function( value, row, index) {
+																var options=[];
+																for(var i=0;i<value.length;i++){
+																	var a=value[i];
+																	options.push(a.name);
 																}
 																return options;
 															}
@@ -126,7 +118,7 @@
 															field : 'name',
 															title : '商品名',
 															width : '20%',
-															hight : '20%'
+															hight:  '20%'
 														},
 														{
 															field : 'describle',
@@ -162,16 +154,15 @@
 															field : 'opt',
 															title : '操作',
 															align : 'center',
-															formatter : function(
-																	value, row,
-																	index) {
+															formatter : function(value, row,index) {
 																return '<button id="'
-																		+ row.id
-																		+ '"  type="button" class="btn btn-outline btn-default" onClick=xjGoods('+row.id+')>下架</button>';
+																+ row.id
+																+ '"  type="button" class=" btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onClick=sh('+ JSON.stringify(row).replace(/"/g, '&quot;') + ')>审核</button>';
 
 															}
 
-														} ]
+														}
+												]
 											});
 						});
 
@@ -183,16 +174,72 @@
 			};
 			return temp;
 		}
+		
+		
+		//触发模态框的同时调用此方法  
+		function sh(obj) {
+// 			console.log(obj);
+		    //获取表格中的一行数据
+		    //向模态框中传值  		    
+		    $("#shmodal").html(" <div class='she'><img src='../upload/"+obj.image[0].imgUrl+"' width='25%' hight='50%'/></div>"
+		    +"<div class='she1'>"
+		    +"<input type='hidden'  id='id' value='"+obj.id+"'/>"
+		    +"<div>类别名："+obj.catelog[0].name+"awda&nbsp;&nbsp;&nbsp;&nbsp;商品名："+obj.name+"</div>"
+		    +"<div class='yuanjia'>商品原价：<a>"+obj.realPrice+"</a></div>"
+		    
+		    +"<div class='xianjia'>商品现价：<a>"+obj.price+"</a></div>"
+		    
+		    +"<div>商品简介："+obj.describle+"</div>"
+		    
+		    +"<div>审核：<select id='shs'>"
+		  	    +"<option value='1'>审核通过</option>"
+		    	+"<option value='2'>审核不通过</option>"
+		    +"</select></div>"
+		    +"</div>");
+		    $('#update').modal('show');  
+		}  
+		
+		
+		
+		
+	</script>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">审核</h4>
+				</div>
 
-		function xjGoods(id) {
-			$.post("../admin/xjGoods", {
-				"goodsId" : id
-			}, function(result) {
-				alert("下架成功！");
-				//$('#myModal').modal('hide');
-				$("#goodsListTable").bootstrapTable('refresh', "../admin/getGoodsLists");
-			});
-		}
+				<div class="modal-body" id="shmodal" style="height: 330px;">
+
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="button" class="btn btn-primary" onclick="tjshGoods()">提交更改</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	function tjshGoods(){
+		var good_status = $("#shs").val().trim();
+		var id = $("#id").val().trim();
+	 	$.post("../admin/tjshGoods", {
+		"good_status" : good_status,
+		"id" : id
+	}, function(result) {
+		$('#myModal').modal('hide');
+		$("#goodsShListTable").bootstrapTable('refresh',"../admin/GoodsListsSh");
+	});
+	}  
+	
+
 	</script>
 </body>
 </html>

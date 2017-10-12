@@ -15,6 +15,15 @@ import com.c2c.pojo.User;
 import com.c2c.service.CommentsService;
 import com.c2c.service.GoodsService;
 import com.c2c.service.UserService;
+/**
+ *  评论类
+ * <p>Title:CommentsController</p>
+ * <p>Description: 评论类</p>
+ * <p>Company:com.c2c</p>
+ * @author Muling
+ * @date 2017年10月11日 下午4:02:24
+ * @version 1.0
+ */
 @Controller
 @RequestMapping(value = "/comments")
 public class CommentsController {

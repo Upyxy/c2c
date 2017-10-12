@@ -1,0 +1,17 @@
+.she img{
+	width: 400px;
+	height: 190px;
+	position: absolute;
+}
+.she1{
+	position: relative;
+	margin-top: 190px;
+}
+.yuanjia a{
+	/* text-decoration:none; */
+	text-decoration: line-through;
+	color: gray;
+}
+.xianjia a{
+	color: red;
+}

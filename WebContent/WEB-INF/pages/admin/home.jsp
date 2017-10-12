@@ -46,17 +46,18 @@
 						</div>
 						<div class="logo-element">C2C</div>
 					</li>
-					<li><a href=""> <i class="fa fa-home"></i>
-						<span class="nav-label">主页</span>
+					<li><a href=""> <i class="fa fa-align-left"></i>
+						<span class="nav-label">管理分类</span>
 						<span class="fa arrow"></span>
 					</a>
 						<ul class="nav nav-second-level">
 							<li><a class="J_menuItem" href="../admin/userList">用户管理</a></li>
 							<li><a class="J_menuItem" href="../admin/goodsList">商品管理</a></li>
-							<li><a class="J_menuItem" href="index_v3.html">评论管理</a></li>
+<!-- 							<li><a class="J_menuItem" href="../admin/goodsSh">商品审核</a></li> -->
 						</ul></li>
-					<li><a class="J_menuItem" href="layouts.html"><i
-							class="fa fa-columns"></i> <span class="nav-label">布局</span></a></li>
+					<li><a class="J_menuItem" href="../admin/goodsSh">
+					<i class="fa fa-columns"></i> 
+					<span class="nav-label">商品审核</span></a></li>
 
 				</ul>
 			</div>

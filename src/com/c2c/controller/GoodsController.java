@@ -29,7 +29,15 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.c2c.service.GoodsService;
-
+/**
+ * 商品类
+ * <p>Title:GoodsController</p>
+ * <p>Description:商品类</p>
+ * <p>Company:com.c2c</p>
+ * @author Muling
+ * @date 2017年10月11日 下午4:03:06
+ * @version 1.0
+ */
 @Controller
 @RequestMapping(value = "/goods")
 public class GoodsController {
@@ -344,4 +352,6 @@ public class GoodsController {
             return map;
         }
     }
+    
+
 }

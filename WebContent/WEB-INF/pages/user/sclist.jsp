@@ -85,7 +85,7 @@
                     </a>
                     <a href="<%=basePath%>user/myorder">
                     <li class="myorder">
-                            <span>我的订单</span>
+                            <span>我已购买</span>
                             <strong></strong>
                     </li>
                     </a>

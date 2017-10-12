@@ -60,6 +60,7 @@
 
 .city-picker-span > .placeholder {
     color: #aaa;
+    padding-left: 1px;
 }
 
 .city-picker-span > .arrow {
@@ -106,6 +107,7 @@
 
 .city-select-wrap {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    width: 450px;
 }
 
 .city-select-tab {

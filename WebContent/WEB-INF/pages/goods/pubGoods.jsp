@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="../css/fileinput.min.css">
     <script type="text/javascript" src="../js/fileinput.min.js"></script>
     <script type="text/javascript" src="../js/zh.js"></script>
-
     <style>
         .container{padding-top:10px}
     </style>
@@ -56,41 +55,49 @@
                 <span class="name">闲置数量：${cur_user.goodsNum}</span>
             </div>
             <div class="home_nav">
-                <ul>
+                 <ul>
                     <a href="">
                         <li class="notice">
-                            <div></div>
                             <span>我的消息</span>
                             <strong></strong>
                         </li>
                     </a>
-                    <a href="<%=basePath%>collection/scList">
+                 <a href="<%=basePath%>collection/scList">
                         <li class="fri">
-                            <div></div>
                             <span>收藏列表</span>
                             <strong></strong>
                         </li>
                     </a>
                     <a href="<%=basePath%>user/basic">
                         <li class="set">
-                            <div></div>
                             <span>个人设置</span>
                             <strong></strong>
                         </li>
                     </a>
                     <a href="<%=basePath%>goods/publishGoods">
                         <li class="store">
-                            <div></div>
                             <span>发布物品</span>
                             <strong></strong>
                         </li>
                     </a>
                     <a href="<%=basePath%>user/allGoods">
                         <li class="second">
-                            <div></div>
                             <span>我的闲置</span>
                             <strong></strong>
                         </li>
+                    </a>
+                    <a href="<%=basePath%>user/myorder">
+                    <li class="myorder">
+                            <span>我已购买</span>
+                            <strong></strong>
+                    </li>
+                    </a>
+                    <a href="<%=basePath%>user/address">
+                    <li class="myadr">
+                            <span>我的地址</span>
+                            <strong></strong>
+                            
+                    </li>
                     </a>
                 </ul>
             </div>

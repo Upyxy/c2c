@@ -261,6 +261,7 @@ width:700px}
         <div class="publisher-info-title">
             <em>卖家信息</em><hr>
         </div>
+        
         <c:if test="${empty cur_user}">
             <div class="item-contact">
                 <p class="not-login">
@@ -292,6 +293,7 @@ width:700px}
                     <div class="value">${seller.qq}</div>
                 </div>
                 <!-- 按钮 -->
+                <c:if test="${goodsExtend.goods.good_status!=3}">
                 <div>
                 <form action="../../order/enter" method="post">
                 <input type="hidden" name="goodsId" value="${goodsExtend.goods.id}"/>
@@ -308,6 +310,10 @@ width:700px}
                 <input type="button" value="收藏" onclick="shoucang(${goodsExtend.goods.id})"> 
                 </div>
                 </div>
+                </c:if>
+                <c:if test="${goodsExtend.goods.good_status==3}">
+                	<h1 class="shouchu">已售出</h1>
+                	</c:if>
             </div>
         </c:if>
         <h1 class="item-pub-time">发布于 ${goodsExtend.goods.startTime}</h1>
@@ -416,7 +422,7 @@ width:700px}
 					if(result.replyList.length>0){
 						for (var i = 0; i < result.replyList.length; i++) {
 							var node = "<div>"
-										+"<em class='name ng-binding'>"+result.replyList[i].id+":</em>"
+										+"<em class='name ng-binding'>"+result.replyList[i].user[0].username+":</em>"
 										+"<em class='ng-binding'>"+result.replyList[i].content+"</em><br>"
 										+"<em class='time ng-biinding'>"+result.replyList[i].createAt+"</em>"
 										+"<hr/></div>";

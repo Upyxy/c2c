@@ -279,7 +279,7 @@
     100% {transform:translate(60px);opacity:1;}
 }
 
-/* µØÖ·ÁÐ±í */
+/* ï¿½ï¿½Ö·ï¿½Ð±ï¿½ */
 .adList{
 	margin-top: 60px;
 	margin-bottom:20px;
@@ -296,5 +296,9 @@
 .adList td{
 	padding: 10px;
 }
-
+.adList button[type="button"]{
+	border: none;
+	height: 30px;
+	width:50px;
+}
 

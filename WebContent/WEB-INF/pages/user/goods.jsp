@@ -31,8 +31,6 @@
             </a>
         </div>
         <!--
-            作者：hlk_1135@outlook.com
-            时间：2017-05-10
             描述：左侧个人中心栏
         -->
         <div id="user_nav">
@@ -87,7 +85,7 @@
                     </a>
                     <a href="<%=basePath%>user/myorder">
                     <li class="myorder">
-                            <span>我的订单</span>
+                            <span>我已购买</span>
                             <strong></strong>
                     </li>
                     </a>
@@ -102,15 +100,11 @@
             </div>
         </div>
         <!--
-            作者：hlk_1135@outlook.com
-            时间：2017-05-10
             描述：右侧内容区域
         -->
         <div id="user_content">
             <div class="share">
                 <!--
-                    作者：hlk_1135@outlook.com
-                    时间：2017-05-11
                     描述：闲置商品展示
                 -->
                 <div class="share_content">
@@ -140,8 +134,13 @@
                                         <span class="fa fa-heart"><a href="<%=basePath%>goods/editGoods/${items.goods.id}">编辑</a></span>
                                         <span class="fa fa-share"><a href="">擦亮</a></span>
                                         <span class="fa fa-commenting"><a>${items.goods.commetNum}0</a></span>
+                                        <c:if test="${items.goods.good_status ==3}">
+                                        <span class="fa fa-commenting"><a>已出售</a></span>
+                                        </c:if>
                                         <span class="time">${items.goods.startTime}</span>
+                                        <c:if test="${items.goods.good_status !=3}">
                                         <span class="fa fa-trash"><a href="<%=basePath%>goods/deleteGoods/${items.goods.id}">删除</a></span>
+                                        </c:if>
                                     </div>
                                     <div class="like_detail">
                                         <div class="like_content">
@@ -154,7 +153,7 @@
                     </c:if>
                 </div>
             </div>
-          
+          <!-- 最右侧 -->
             <div class="recommend">
                 <div class="title">
                     <span class="text">可能认识的人</span>

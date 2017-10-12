@@ -1,20 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.c2c.dao.OrderMapper" >
-<!-- <resultMap id="BaseResultMap" type="com.c2c.pojo.Order" >
+<resultMap id="BaseResultMap" type="com.c2c.pojo.Order" >
 	<id column="id" property="id" jdbcType="INTEGER" />
     <result column="seller_id" property="sellerId" jdbcType="INTEGER" />
     <result column="buyer_id" property="buyerId" jdbcType="INTEGER" />
     <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
     <result column="price" property="price" jdbcType="FLOAT" />
      <result column="create_at" property="createAt" jdbcType="VARCHAR" />
-  </resultMap> -->
+      <result column="address_id" property="addressId" jdbcType="INTEGER" />
+  </resultMap>
+  
+<!--输出所有关于订单的消息  -->
+<resultMap id="OrderListResultMap" type="com.c2c.pojo.Order" >
+	<id column="id" property="id" jdbcType="INTEGER" />
+    <result column="seller_id" property="sellerId" jdbcType="INTEGER" />
+    <result column="buyer_id" property="buyerId" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="FLOAT" />
+    <result column="create_at" property="createAt" jdbcType="VARCHAR" />
+    <result column="address_id" property="addressId" jdbcType="INTEGER" />
+    <collection property="image" javaType="java.util.List" ofType="com.c2c.pojo.Image">  
+            <id column="id" property="id" jdbcType="INTEGER" />  
+            <result column="img_url" property="imgUrl" jdbcType="VARCHAR" /> 
+            <result column="goods_id" property="goodsId" jdbcType="VARCHAR" />  
+        </collection> 
+    <collection property="goods" javaType="java.util.List" ofType="com.c2c.pojo.Goods">  
+            <id column="id" property="id" jdbcType="INTEGER" />  
+            <result column="name" property="name" jdbcType="VARCHAR" />   
+            <result column="describle" property="describle" jdbcType="VARCHAR" />   
+        </collection> 
+    <collection property="address" javaType="java.util.List" ofType="com.c2c.pojo.Address">  
+            <id column="id" property="id" jdbcType="INTEGER" />
+            <result column="user_id" property="userId" jdbcType="INTEGER" />
+            <result column="buyer_name" property="buyerName" jdbcType="VARCHAR" />
+            <result column="buyer_phone" property="buyerPhone" jdbcType="CHAR" />
+            <result column="address_content" property="addressContent" jdbcType="VARCHAR" /> 
+        </collection> 
+  </resultMap>
+
 
  <insert id="inser" parameterType="com.c2c.pojo.Order">
     insert into `order` ( seller_id, buyer_id, goods_id,
-      creat_at, price)
+      creat_at, price,address_id)
     values ( #{sellerId,jdbcType=INTEGER}, #{ buyerId,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, 
-      #{createAt,jdbcType=VARCHAR}, #{price,jdbcType=FLOAT})
+      #{createAt,jdbcType=VARCHAR}, #{price,jdbcType=FLOAT}, #{addressId,jdbcType=INTEGER})
   </insert>
+  
+  <select id="selectOrderByUserId" resultMap="OrderListResultMap">
+	  
+	  SELECT O.*,Ima.img_url,G.describle ,G.`name`,AD.* FROM `order` O
+	  LEFT JOIN image Ima ON O.goods_id=Ima.goods_id
+	  LEFT JOIN goods G ON O.goods_id=G.id
+	  LEFT JOIN address AD ON AD.id=O.address_id
+	  WHERE O.buyer_id=#{id,jdbcType=INTEGER}
+  
+<!--     select * from `order` where buyer_id = #{id,jdbcType=INTEGER} -->
+  </select>
 
 </mapper>

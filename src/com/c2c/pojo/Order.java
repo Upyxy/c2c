@@ -1,5 +1,7 @@
 package com.c2c.pojo;
 
+import java.util.List;
+
 public class Order {
 	private Integer id;
 	private Integer sellerId;
@@ -7,6 +9,10 @@ public class Order {
 	private Integer goodsId;
 	private String createAt;
 	private float price;
+	private Integer addressId;
+	private List<Image> image;
+	private List<Goods> goods;
+	private List<Address> address;
 
 	public Integer getId() {
 		return id;
@@ -54,6 +60,38 @@ public class Order {
 
 	public void setPrice(float price) {
 		this.price = price;
+	}
+
+	public Integer getAddressId() {
+		return addressId;
+	}
+
+	public void setAddressId(Integer addressId) {
+		this.addressId = addressId;
+	}
+
+	public List<Image> getImage() {
+		return image;
+	}
+
+	public void setImage(List<Image> image) {
+		this.image = image;
+	}
+
+	public List<Goods> getGoods() {
+		return goods;
+	}
+
+	public void setGoods(List<Goods> goods) {
+		this.goods = goods;
+	}
+
+	public List<Address> getAddress() {
+		return address;
+	}
+
+	public void setAddress(List<Address> address) {
+		this.address = address;
 	}
 
 }

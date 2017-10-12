@@ -3,10 +3,12 @@ package com.c2c.controller;
 import com.c2c.pojo.Address;
 import com.c2c.pojo.Goods;
 import com.c2c.pojo.GoodsExtend;
+import com.c2c.pojo.Order;
 import com.c2c.pojo.User;
 import com.c2c.service.AddressService;
 import com.c2c.service.GoodsService;
 import com.c2c.service.ImageService;
+import com.c2c.service.OrderService;
 import com.c2c.util.DateUtil;
 import com.c2c.util.JsonUtil;
 import com.c2c.util.MD5;
@@ -27,7 +29,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 用户controller
+ * <p>Title:UserController</p>
+ * <p>Description:用户控制层 </p>
+ * <p>Company:com.c2c</p>
+ * @author Muling
+ * @date 2017年10月11日 下午4:08:12
+ * @version 1.0
+ */
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
@@ -41,6 +51,8 @@ public class UserController {
 	private ImageService imageService;
 	@Autowired
     private AddressService addressService;
+	@Autowired
+	private OrderService orderService;
 
 	/**
 	 * 用户注册
@@ -54,13 +66,12 @@ public class UserController {
 		String url = request.getHeader("Referer");
 		User user = userService.getUserByPhone(user1.getPhone());
 		if (user == null) {// 检测该用户是否已经注册
-			String t = DateUtil.getNowDate();
 			// 对密码进行MD5加密
 			String str = MD5.md5(user1.getPassword());
-			user1.setCreateAt(t);// 创建开始时间
+			user1.setCreateAt(DateUtil.getNowDate());// 创建开始时间
 			user1.setPassword(str);
 			user1.setGoodsNum(0);
-			user1.setStatus(new Byte("0"));
+			user1.setStatus(new Byte("1"));
 			user1.setPower(new Byte("10"));
 			userService.addUser(user1);
 		}
@@ -186,8 +197,13 @@ public class UserController {
      * 个人订单
      */
     @RequestMapping(value = "/myorder")
-    public String myorder() {
-        return "/user/myorder";
+    public ModelAndView myorder(HttpServletRequest request,Address address,Order order) {
+    	User cur_user = (User)request.getSession().getAttribute("cur_user");
+    	List<Order> orderList = orderService.selectOrderByUserId(cur_user.getId());
+    	ModelAndView mv=new ModelAndView();
+    	mv.addObject("orderList",orderList);
+    	mv.setViewName("/user/myorder");
+    	return mv;
     }
 
 

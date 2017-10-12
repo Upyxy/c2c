@@ -18,6 +18,16 @@ import com.c2c.pojo.Image;
 import com.c2c.pojo.User;
 import com.c2c.service.CollectionService;
 import com.c2c.service.UserService;
+/**
+ * 收藏类
+ * <p>Title:CollectionController</p>
+ * <p>Description: </p>
+ * <p>Company:com.c2c</p>
+ * @author Muling
+ * @date 2017年10月11日 下午4:01:29
+ * @version 1.0
+ */
+
 @Controller
 @RequestMapping(value = "/collection")
 public class CollectionController {

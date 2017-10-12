@@ -3,127 +3,112 @@ package com.c2c.pojo;
 import java.util.List;
 
 public class Goods {
-    private Integer id;
+	private Integer id;
 
-    private Integer catelogId;
+	private Integer catelogId;
 
-    private Integer userId;
+	private Integer userId;
 
-    private String name;
+	private String name;
 
-    private Float price;
+	private Float price;
 
-    private Float realPrice;
+	private Float realPrice;
 
-    private String startTime;
+	private String startTime;
 
-    private String endTime;
+	private String endTime;
 
-    private String polishTime;
+	private String polishTime;
 
-    private Integer commetNum;
+	private Integer commetNum;
 
-    private String describle;
-    
-    private List<Catelog> catelog;
-    
-    private List<Image> image;
+	private String describle;
 
-    public Integer getId() {
-        return id;
-    }
+	private List<Catelog> catelog;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private List<Image> image;
 
-    public Integer getCatelogId() {
-        return catelogId;
-    }
+	private Integer good_status;
 
-    public void setCatelogId(Integer catelogId) {
-        this.catelogId = catelogId;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public Integer getUserId() {
-        return userId;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
+	public Integer getCatelogId() {
+		return catelogId;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setCatelogId(Integer catelogId) {
+		this.catelogId = catelogId;
+	}
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	public Integer getUserId() {
+		return userId;
+	}
 
-    public Float getPrice() {
-        return price;
-    }
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
 
-    public void setPrice(Float price) {
-        this.price = price;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public Float getRealPrice() {
-        return realPrice;
-    }
+	public void setName(String name) {
+		this.name = name == null ? null : name.trim();
+	}
 
-    public void setRealPrice(Float realPrice) {
-        this.realPrice = realPrice;
-    }
+	public Float getPrice() {
+		return price;
+	}
 
-    public String getStartTime() {
-        return startTime;
-    }
+	public void setPrice(Float price) {
+		this.price = price;
+	}
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime == null ? null : startTime.trim();
-    }
+	public Float getRealPrice() {
+		return realPrice;
+	}
 
-    public String getEndTime() {
-        return endTime;
-    }
+	public void setRealPrice(Float realPrice) {
+		this.realPrice = realPrice;
+	}
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime == null ? null : endTime.trim();
-    }
+	public String getStartTime() {
+		return startTime;
+	}
 
-    public Integer getCommetNum() {
-        return commetNum;
-    }
+	public void setStartTime(String startTime) {
+		this.startTime = startTime == null ? null : startTime.trim();
+	}
 
-    public void setCommetNum(Integer commetNum) {
-        this.commetNum = commetNum;
-    }
+	public String getEndTime() {
+		return endTime;
+	}
 
-    public String getDescrible() {
-        return describle;
-    }
+	public void setEndTime(String endTime) {
+		this.endTime = endTime == null ? null : endTime.trim();
+	}
 
-    public void setDescrible(String describle) {
-        this.describle = describle == null ? null : describle.trim();
-    }
+	public String getDescrible() {
+		return describle;
+	}
 
-    public String getPolishTime() {
-        return polishTime;
-    }
+	public void setDescrible(String describle) {
+		this.describle = describle == null ? null : describle.trim();
+	}
 
-    public void setPolishTime(String polishTime) {
-        this.polishTime = polishTime;
-    }
+	public String getPolishTime() {
+		return polishTime;
+	}
 
-	@Override
-	public String toString() {
-		return "Goods [id=" + id + ", catelogId=" + catelogId + ", userId="
-				+ userId + ", name=" + name + ", price=" + price
-				+ ", realPrice=" + realPrice + ", startTime=" + startTime
-				+ ", endTime=" + endTime + ", polishTime=" + polishTime
-				+ ", commetNum=" + commetNum + ", describle=" + describle + "]";
+	public void setPolishTime(String polishTime) {
+		this.polishTime = polishTime;
 	}
 
 	public List<Catelog> getCatelog() {
@@ -141,5 +126,31 @@ public class Goods {
 	public void setImage(List<Image> image) {
 		this.image = image;
 	}
-    
+
+	public Integer getCommetNum() {
+		return commetNum;
+	}
+
+	public void setCommetNum(Integer commetNum) {
+		this.commetNum = commetNum;
+	}
+
+	public Integer getGood_status() {
+		return good_status;
+	}
+
+	public void setGood_status(Integer good_status) {
+		this.good_status = good_status;
+	}
+
+	@Override
+	public String toString() {
+		return "Goods [id=" + id + ", catelogId=" + catelogId + ", userId="
+				+ userId + ", name=" + name + ", price=" + price
+				+ ", realPrice=" + realPrice + ", startTime=" + startTime
+				+ ", endTime=" + endTime + ", polishTime=" + polishTime
+				+ ", commetNum=" + commetNum + ", describle=" + describle
+				+ ", catelog=" + catelog + ", image=" + image
+				+ ", good_status=" + good_status + "]";
+	}
 }

@@ -21,7 +21,15 @@ import com.c2c.service.CommentsService;
 import com.c2c.service.ReplyService;
 import com.c2c.service.UserService;
 import com.c2c.util.JsonUtil;
-
+/**
+ * 回复
+ * <p>Title:ReplyController</p>
+ * <p>Description: 回复</p>
+ * <p>Company:com.c2c</p>
+ * @author Muling
+ * @date 2017年10月11日 下午4:07:34
+ * @version 1.0
+ */
 @Controller
 @RequestMapping(value = "/reply")
 public class ReplyController {

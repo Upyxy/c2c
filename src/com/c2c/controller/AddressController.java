@@ -14,8 +14,15 @@ import com.c2c.pojo.Goods;
 import com.c2c.pojo.User;
 import com.c2c.service.AddressService;
 
-
-
+/**
+ * 地址类
+ * <p>Title:AddressController</p>
+ * <p>Description:地址类 </p>
+ * <p>Company:com.c2c</p>
+ * @author Muling
+ * @date 2017年10月11日 下午4:00:21
+ * @version 1.0
+ */
 @Controller
 @RequestMapping(value="/address")
 public class AddressController {

@@ -6,7 +6,6 @@ import java.util.List;
 
 /**
  * 用户分页查询工具类
- * Created by lenovo on 2017/5/14.
  */
 public class UserGrid {
 

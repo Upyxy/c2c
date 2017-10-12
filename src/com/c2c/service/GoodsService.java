@@ -64,5 +64,32 @@ public interface GoodsService {
      */
 	public List<Goods> getGoodsLists(String keyword, int currentPage,
 			int pageSize);
+	/**
+	 * 分页查询记录总条数
+	 * @param keyword
+	 * @return
+	 */
+	public int getKeywordCount(String keyword);
+	
+    /*
+     * 查询出后台管理界面的所有关于商品的信息
+     */
+	public List<Goods> GoodsListsSh(String keyword, int currentPage,int pageSize);
+	/**
+	 * 分页查询记录总条数
+	 * @param keyword
+	 * @return
+	 */
+	public int getKeywordCountSh(String keyword);
+	
+	
+    /*
+     * 根据Goodsid更新GOOd状态为三，即已卖出
+     */
+	public int updateStatusBygoodsId(int id);
+	/*
+	 * 审核状态更改
+	 */
+	public int updateGoodsStatusBygoodsId(String good_status,int id);
 
 }

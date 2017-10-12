@@ -10,9 +10,6 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddress;
 import java.io.FileInputStream;
 
-/**
- * Created by lenovo on 2017/7/7.
- */
 public class ReadExcel {
 
     //判断指定的单元格是否是合并单元格

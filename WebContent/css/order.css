@@ -1,12 +1,29 @@
+.ding table tr th{
+	color: black;
+  	font-size: 14px;
+ 	font-family: 'OleoScript-Regular';
+ 	
+ 	padding-left:5px;
+}
+.ding table tr{
+	height: 40px;
+	border: 1px solid;
+	border-color: gainsboro; 
+}
+.ding table tr td{
+	font-size: 14px;
+	color: black;
+	padding-left:5px;
+}
 
 /*--checkout--*/
 .check-out{
 	padding:2em 0em;
-	margin-top: 150px;
 	position: relative;
 }
 .check-out1{
 	padding: 4em 0em 2em 0em;
+	margin-bottom: 30px;
 }
 tr{
 	height: 50px;
@@ -70,7 +87,7 @@ tr{
 	width:6%;
 }
 .ring-in{
-	width:100px;
+	width:250px;
 }
 .check-out h1 {
     font-size: 3em;

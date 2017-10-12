@@ -32,8 +32,6 @@
             </a>
         </div>
         <!--
-            作者：hlk_1135@outlook.com
-            时间：2017-05-10
             描述：左侧个人中心栏
         -->
         <div id="user_nav">
@@ -87,7 +85,7 @@
                     </a>
                     <a href="<%=basePath%>user/myorder">
                     <li class="myorder">
-                            <span>我的订单</span>
+                            <span>我已购买</span>
                             <strong></strong>
                     </li>
                     </a>
@@ -102,8 +100,6 @@
             </div>
         </div>
         <!--
-            作者：hlk_1135@outlook.com
-            时间：2017-05-10
             描述：右侧内容区域
         -->
         <div id="user_content">

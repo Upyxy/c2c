@@ -22,4 +22,6 @@ public interface ImageMapper {
     int updateByPrimaryKey(Image record);
 
     List<Image> selectByGoodsPrimaryKey(Integer goodsId);
+    
+    int getImagesId(Integer goodsId);
 }
